@@ -76,7 +76,73 @@ nav {
 
 main { padding-top: 60px; }
 
-/* HERO */
+/* HERO SPLIT (nateliason-style) */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 5rem;
+  align-items: flex-start;
+  padding: 80px 0 72px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.hero-greeting {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-body p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+
+.hero-body a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-body a:hover { opacity: 0.6; }
+
+.hero-right {
+  position: sticky;
+  top: 80px;
+}
+
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 56px 0 56px;
+  }
+  .hero-right {
+    position: static;
+    max-width: 240px;
+    order: -1;
+  }
+}
+
+/* HERO (legacy — kept for other pages) */
 .hero {
   padding: 100px 0 80px;
   border-bottom: 1px solid var(--gray-200);
